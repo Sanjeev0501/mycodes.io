@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Code Snippet Viewer</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+  .code-container {
+    display: none;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 10px;
+  }
+</style>
+</head>
+<body>
+<h1>Code Snippet Viewer</h1>
+<button class="snippet-btn">Button 1</button>
+<button class="snippet-btn">Button 2</button>
+<button class="snippet-btn">Button 3</button>
+<button class="snippet-btn">Button 4</button>
+<button class="snippet-btn">Button 5</button>
+<button class="snippet-btn">Button 6</button>
+<button class="snippet-btn">Button 7</button>
+<button class="snippet-btn">Button 8</button>
+<button class="snippet-btn">Button 9</button>
+<button class="snippet-btn">Button 10</button>
+
+<div class="code-container">
+  <h2>Code Snippet</h2>
+  <pre>
+    <code>
+      <!-- Code for Button 1 -->
+    </code>
+  </pre>
+  <a class="https://drive.google.com/uc?export=download&id=1jTDtMCQF3yLH0HT_xtm20m28blMgCmtq" download="button1-code.txt">Download Code</a>
+</div>
+
+<!-- Create similar div elements for the rest of the buttons -->
+
+<script>
+  const buttons = document.querySelectorAll('.snippet-btn');
+  const codeContainers = document.querySelectorAll('.code-container');
+
+  buttons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+      codeContainers.forEach((container, containerIndex) => {
+        if (index === containerIndex) {
+          container.style.display = 'block';
+        } else {
+          container.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
+</body>
+</html>
